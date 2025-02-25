@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esse gato sou eu </title>
+</head>
+<body>
+    <header>
+        <img src="img/gato.jpg" alt="Gato">
+        <h1>Qual Gato sou Eu</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form">
+                <form action="/" method="post">
+                    <label>informe seu nome</label>
+                    <input type="text" name="nome" />
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="gato">
+                {% if not url_imagem %}
+                <img src="..." alt="..." />
+                {% else %}
+                    <img src="{{ url_imagem }}" alt="Gato" />
+                    <p>{{ nome }}</p>
+                {% endif %}
+                {% if erro %}
+                    <p>{{ erro }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Todos os direitos reservados &copy; 2025</p>
+    </footer>
+</body>
+</html>
